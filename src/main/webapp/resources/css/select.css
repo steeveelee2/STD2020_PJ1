@@ -1,0 +1,40 @@
+#selectTable{
+	height:600px;
+	width:99%;
+}
+#selectTable #topLine{
+	position:static;
+	height:200px;
+	width:99%;
+}
+#selectTable #topLine div{
+	float:left;
+	height:200px;
+	border:1px solid black;
+	width:33%;
+	cursor:pointer;
+}
+#selectTable #middleLine{
+	position:static;
+	height:200px;
+	width:99%;
+}
+#selectTable #middleLine div{
+	float:left;
+	height:200px;
+	border:1px solid black;
+	width:33%;
+	cursor:pointer;
+}
+#selectTable #bottomLine{
+	postition:static;
+	height:200px;
+	width:99%;
+}
+#selectTable #bottomLine div{
+	float:left;
+	border:1px solid black;
+	height:200px;
+	width:33%;
+	cursor:pointer;
+}

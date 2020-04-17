@@ -2,6 +2,10 @@
  * 
  */
 $(document).ready(function(){
+	bannerRolling();
+});
+
+function bannerRolling(){
 	$('.bxslider').bxSlider({
 		mode:'horizontal', 
 		speed:500, 
@@ -9,4 +13,4 @@ $(document).ready(function(){
 		captions: true, 
 		autoControls: false, 
 	});
-});
+} 

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="/resources/js/index.js"></script>
 <script type="text/javascript" src="/resources/js/jquery.bxslider.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/jquery.bxslider.css"/>
@@ -23,13 +23,12 @@
 </div>
 
 <div style="position:static;width:500px;height:500px;background-color:red;">
-	<font style="color:cyan;font-size:xx-large;">와!!!!!!!!!!!!!!!!!!!!!</font>
+	<font style="color:cyan;font-size:xx-large;">${testKey}</font>
 </div>
 </body>
 </html>
 
 <%--
-
 
 시간은 환상이다. 점심시간은 두 배로 그렇다. - 더글러스 애덤스
 

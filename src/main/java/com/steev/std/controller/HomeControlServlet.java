@@ -1,15 +1,19 @@
 package com.steev.std.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
+import java.net.URLDecoder;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Handles requests for the application home page.
@@ -26,16 +30,47 @@ public class HomeControlServlet {
 	public String index(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		// 랜덤키로 어떻게 해볼수있지 않을까?
+		long seed=System.currentTimeMillis();
+		Random rand=new Random(seed);
+		float tk=rand.nextFloat();
 		
-		String formattedDate = dateFormat.format(date);
-		
-		System.out.println(formattedDate);
-		
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("testKey",String.valueOf(tk));
 		
 		return "index";
 	}
 	
+	@RequestMapping(value="/select.do", method=RequestMethod.GET)
+	public String select(Model model) {
+		// 초기 화면 세팅
+		model.addAttribute("tl","한식");
+		model.addAttribute("tc","탕, 찌개");
+		model.addAttribute("tr","중식");
+		model.addAttribute("ml","일식");
+		model.addAttribute("mc","점심 메뉴");
+		model.addAttribute("mr","양식");
+		model.addAttribute("bl","해장");
+		model.addAttribute("bc","간편식");
+		model.addAttribute("br","기타");
+		return "select";
+	}
+	
+	@RequestMapping(value="/decision.do", method=RequestMethod.POST)
+	@ResponseBody
+	public Map<String, String[]> decision(@RequestBody String encSel) {
+		// 원래는 db에 갔다와야하는건데 시간 부족하니까 자바단에서 처리
+		String sel=URLDecoder.decode(encSel).substring(9);
+		
+		Map<String, String[]> map=new HashMap<>();
+		DecisionController dc=new DecisionController();
+		if(dc.chkStep(sel)) {
+			map.put("menuName", dc.decisionName(sel));
+			map.put("menuPic", new String[1]);
+		}else {
+			map.put("menuName", new String[1]);
+			map.put("menuPic", dc.decisionPic(sel));
+		}
+		
+		return map;
+	}
 }
