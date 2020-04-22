@@ -6,6 +6,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -63,14 +65,16 @@ public class HomeControlServlet {
 		
 		Map<String, String[]> map=new HashMap<>();
 		DecisionController dc=new DecisionController();
-		if(dc.chkStep(sel)) {
-			map.put("menuName", dc.decisionName(sel));
-			map.put("menuPic", new String[1]);
-		}else {
-			map.put("menuName", new String[1]);
-			map.put("menuPic", dc.decisionPic(sel));
-		}
+		map.put("menuName", dc.decisionName(sel));
+		
 		
 		return map;
+	}
+	
+	@RequestMapping(value="/result.do", method=RequestMethod.POST)
+	public String select(Model model, HttpServletRequest req) {
+		//결과
+		model.addAttribute("fSel", req.getParameter("fSel"));
+		return "result";
 	}
 }
