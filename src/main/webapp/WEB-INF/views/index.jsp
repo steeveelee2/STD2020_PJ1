@@ -22,6 +22,10 @@
     </ul>
 </div>
 
+<div>
+	<button onclick="start();">시작하기</button>
+</div>
+
 <div style="position:static;width:500px;height:500px;background-color:red;">
 	<font style="color:cyan;font-size:xx-large;">${testKey}</font>
 </div>

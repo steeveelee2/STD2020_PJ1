@@ -5,6 +5,7 @@ $(document).ready(function(){
 	// 클릭시 이벤트 발생
 	$('.lunchSelect').click(function(){
 		const decision=$(this).children().html();
+		if(decision=='점심 메뉴') return false;
 		//console.log(sel);
 		$.ajax({
 			type:'post',
@@ -26,6 +27,7 @@ $(document).ready(function(){
 					$('#br').html("<font>"+nameArr[8]+"</font>");
 				}else{
 					$('#fSel').val(nameArr[0]);
+					$("#form").attr("action", "result.do");
 					$('#form').submit();
 				}
 			},

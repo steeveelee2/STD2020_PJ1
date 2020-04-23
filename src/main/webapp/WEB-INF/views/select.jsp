@@ -30,7 +30,7 @@
 	
 	<button onclick="retry();">다시하기</button>
 	<%-- 결과전송폼 --%>
-	<form id="form" name="form" method="post" action="result.do">
+	<form id="form" name="form" method="post" action="">
 		<input type="hidden" id="fSel" name="fSel" value="">
 	</form>
 </body>

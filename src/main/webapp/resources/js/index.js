@@ -14,3 +14,7 @@ function bannerRolling(){
 		autoControls: false, 
 	});
 } 
+
+function start(){
+	location.href="select.do";
+}
