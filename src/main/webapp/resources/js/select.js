@@ -16,15 +16,10 @@ $(document).ready(function(){
 				const nameArr=data.menuName;
 				// 클릭단계별
 				if(nameArr.length>1){
-					$('#tl').html("<font>"+nameArr[0]+"</font>");
-					$('#tc').html("<font>"+nameArr[1]+"</font>");
-					$('#tr').html("<font>"+nameArr[2]+"</font>");
-					$('#ml').html("<font>"+nameArr[3]+"</font>");
-					$('#mc').html("<font>"+nameArr[4]+"</font>");
-					$('#mr').html("<font>"+nameArr[5]+"</font>");
-					$('#bl').html("<font>"+nameArr[6]+"</font>");
-					$('#bc').html("<font>"+nameArr[7]+"</font>");
-					$('#br').html("<font>"+nameArr[8]+"</font>");
+					let num=0;
+					$('.lunchSelect').each(function(){
+						$(this).html("<font>"+nameArr[num++]+"</font>");
+					});
 				}else{
 					$('#fSel').val(nameArr[0]);
 					$("#form").attr("action", "result.do");

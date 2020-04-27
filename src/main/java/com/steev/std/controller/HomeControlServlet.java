@@ -1,6 +1,7 @@
 package com.steev.std.controller;
 
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -61,12 +62,12 @@ public class HomeControlServlet {
 	@ResponseBody
 	public Map<String, String[]> decision(@RequestBody String encSel) {
 		// 원래는 db에 갔다와야하는건데 시간 부족하니까 자바단에서 처리
+		@SuppressWarnings("deprecation")
 		String sel=URLDecoder.decode(encSel).substring(9);
 		
 		Map<String, String[]> map=new HashMap<>();
 		DecisionController dc=new DecisionController();
 		map.put("menuName", dc.decisionName(sel));
-		
 		
 		return map;
 	}
@@ -74,7 +75,9 @@ public class HomeControlServlet {
 	@RequestMapping(value="/result.do", method=RequestMethod.POST)
 	public String select(Model model, HttpServletRequest req) {
 		//결과
-		model.addAttribute("fSel", req.getParameter("fSel"));
+		@SuppressWarnings("deprecation")
+		String fSel=URLEncoder.encode(req.getParameter("fSel"));
+		model.addAttribute("fSel", fSel);
 		return "result";
 	}
 }
