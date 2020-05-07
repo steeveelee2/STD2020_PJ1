@@ -2,6 +2,9 @@
  * 
  */
 $(document).ready(function(){
+	
+	checkCenter();
+	
 	// 클릭시 이벤트 발생
 	$('.lunchSelect').click(function(){
 		const decision=$(this).children().html();
@@ -25,6 +28,7 @@ $(document).ready(function(){
 					$("#form").attr("action", "result.do");
 					$('#form').submit();
 				}
+				checkCenter();
 			},
 			error:function(data){
 				console.log(data);
@@ -35,5 +39,11 @@ $(document).ready(function(){
 
 function retry(){
 	window.location.reload();
+}
+
+function checkCenter(){
+	console.log('checkCenter');
+	if($('#mc font').text()=='점심 메뉴') $('#mc').addClass('nMenu');
+	else $('#mc').removeClass('nMenu');
 }
 

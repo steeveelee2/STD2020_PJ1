@@ -47,8 +47,8 @@
 		</li>
     </ul>
     
-    <div id="startBtn">
-		<button onclick="start();">시작하기</button>
+    <div id="startBtn" onclick="start();">
+		<font>시작하기</font>
 	</div>
 </div>
 

@@ -26,6 +26,10 @@ body #mainTitle{
 	padding:25px 0px 0px 6px;
 }
 
+#main .slideNm font{
+	font-weight:bold;
+}
+
 #main .slideClr{
 	clear:both;
 }
@@ -35,6 +39,51 @@ body #mainTitle{
 }
 
 #main #startBtn{
-	margin-top:200px;
+	margin:200px auto;
 	text-align:center;
+	cursor:pointer;
+	border:1px solid;
+	border-radius:10px 10px 10px 10px;
+	background-color:white;
+	width:30%;
+	height:13%;
+}
+
+#main #startBtn font{
+	line-height:30px;
+	font-weight:bold;
+}
+
+#main #startBtn:hover{
+	margin:200px auto;
+	text-align:center;
+	cursor:pointer;
+	border:1px solid;
+	border-radius:10px 10px 10px 10px;
+	background-color:white;
+	width:33%;
+	height:16%;
+}
+
+#main #startBtn:hover font{
+	line-height:35px;
+	font-weight:bold;
+	font-size:18px;
+}
+
+#main #startBtn:active{
+	margin:200px auto;
+	text-align:center;
+	cursor:pointer;
+	border:1px solid;
+	border-radius:10px 10px 10px 10px;
+	background-color:#FF7800;
+	width:33%;
+	height:16%;
+}
+
+#main #startBtn:active font{
+	line-height:35px;
+	font-weight:bold;
+	font-size:18px;
 }
