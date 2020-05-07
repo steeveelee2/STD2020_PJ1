@@ -1,5 +1,40 @@
-#simonsays{
+body{
+	background-color:#F2F2F2;
+	width: 403px;
+	margin: 0 auto;
+}
+
+body #mainTitle{
+	text-align:center;
+	padding-bottom:40px;
+}
+
+#main{
 	width:400px;
 	height:250px;
 	display:block;
+}
+
+#main .slideImg{
+	width:80%;
+	height:220px;
+	float:left;
+}
+
+#main .slideNm{
+	float:left;
+	padding:25px 0px 0px 6px;
+}
+
+#main .slideClr{
+	clear:both;
+}
+
+#main .slideTxt{
+	float:none;
+}
+
+#main #startBtn{
+	margin-top:200px;
+	text-align:center;
 }
