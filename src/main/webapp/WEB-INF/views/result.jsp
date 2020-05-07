@@ -6,7 +6,7 @@
 <link rel="shortcut icon" href="/resources/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/resources/img/favicon.ico" type="image/x-icon">
 <head>
-	<title>result</title>
+	<title>Today's Lunch</title>
 </head>
 <body>
 <h1>결과페이지</h1>

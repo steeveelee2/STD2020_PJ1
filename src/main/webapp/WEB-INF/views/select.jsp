@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="/resources/img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/resources/img/favicon.ico" type="image/x-icon">
 <head>
-	<title>select</title>
+	<title>Today's Lunch</title>
 </head>
 <body>
 	
